@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+
+	"name": "Split Screen",
+	"version": "1.0",
+
+	"background": {
+		"persistent": false,
+		"scripts": ["background.js"]
+	},
+	"content_scripts": [{
+		"matches": ["http://localhost/split.html"],
+		"css": ["split.css"],
+		"js": ["jquery.min.js", "split.js"]
+	}],
+	"permissions": [
+		"https://www.google.com/",
+		"https://*.google.com/",
+		"https://accounts.google.com/*",
+		"activeTab",
+		"webNavigation"
+	]
+}
